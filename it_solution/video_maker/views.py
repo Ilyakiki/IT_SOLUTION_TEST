@@ -20,9 +20,9 @@ def video(request):
     Request(message=message).save()
 
     BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    file_name=f'\\ready_video.mp4'
+    file_name=f'/ready_video.mp4'
     mime_type, _ = mimetypes.guess_type(BASE_DIR + file_name)
-    with open(BASE_DIR + f'\\ready_video.mp4', 'rb') as p:
+    with open(BASE_DIR + f'/ready_video.mp4', 'rb') as p:
         response = HttpResponse(p, content_type=mime_type)
     response['Content-Disposition'] = "attachment; filename=%s" % file_name
     return response
