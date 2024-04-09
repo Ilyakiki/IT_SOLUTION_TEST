@@ -22,8 +22,8 @@ def create_video(text: str):
     for t in range(180):  # 3 секунды с частотой 60 кадра/сек
 
         frame.fill(0)  # Очистка кадра
-        speed=len(text)//10
-        if len(text)<10:
+        speed=len(text)//12
+        if len(text)<12:
             speed=1
         x -= speed # Скорость бегущей строки
 
