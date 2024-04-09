@@ -22,8 +22,10 @@ def create_video(text: str):
     for t in range(180):  # 3 секунды с частотой 60 кадра/сек
 
         frame.fill(0)  # Очистка кадра
-
-        x -= 5  # Скорость бегущей строки
+        speed=len(text)//10
+        if len(text)<10:
+            speed=1
+        x -= speed # Скорость бегущей строки
 
         cv2.putText(frame, message, (x, y), font, font_scale, font_color, font_thickness)  # Добавление текста в кадр
 
